@@ -21,6 +21,8 @@ public class CustomAdapter extends BaseAdapter {
     // A cache for looking up Views
     private static class ViewHolder {
         TextView name;
+        TextView genre;
+        TextView platform;
         Button delete;
     }
 
@@ -57,6 +59,8 @@ public class CustomAdapter extends BaseAdapter {
             viewHolder.name = (TextView) convertView.findViewById(R.id.name_text_view);
 
             //TODO initialize the other UI elements
+            viewHolder.genre = (TextView) convertView.findViewById(R.id.genre_text_view);
+            viewHolder.platform = (TextView) convertView.findViewById(R.id.platfor_text_view);
 
             convertView.setTag(viewHolder);
         } else {
@@ -68,6 +72,8 @@ public class CustomAdapter extends BaseAdapter {
 
         //TODO Populate the data into the template view using the data object
         viewHolder.name.setText("The name of the Game");
+        viewHolder.genre.setText("The genre of the Game");
+        viewHolder.platform.setText("The platfor of the Game");
 
         //TODO implement onclick for delete (do this after implementing retrofit)
         viewHolder.delete.setOnClickListener(new View.OnClickListener() {
